@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content='Razani' name='Author' />
+  <title></title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/PrayTimes.js"></script>
+</head>
+<body class="bg-home">
+<div class="wrapper">
+<div class="box-wrapp">
+<div class="appbar">
+<h1 class="appbar-title">Razani Network</h1>
+<span class="appbar-description">Internet Unlimited Tanpa Batas Kuota</span>
+<hr class="image">
+</div> <img src="img/atas.png" alt="kemangi 41" style="border-radius: 1px; width:300px; height:20;"/>
+<div class="main">
+    <div class="box">
+        <button class="btn btn-merah" onclick="voucher();"><i class="icon icon-barcode">&#xe815;</i> Voucher</button>
+        <button class="btn btn-hijau" onclick="member();"><i class="icon icon-user">&#xe801;</i> Member</button>
+    </div>
+    <div class="box Informasi" id="Informasi">
+    </div>
+    <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="false" />
+        <input id="username" class="" name="username" type="text" autocomplete="off" required/>
+        <input id="password" class="password" name="password" placeholder="Password" autocomplete="off" type="hidden" required/>
+		$(if trial == 'yes')
+		<button class="btn btn-hijau" onclick="location.href = '$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)';"><i class="icon icon-thumbs-up">&#xe808;</i> Gratis 5menit</button>
+		$(else)
+		<button class="btn btn-hijau disabled"><i class="icon icon-block">&#xe810 </i>Gratis Habis</button>
+		$(endif)
+        <button class="btn btn-merah" type="submit"><i class="icon icon-login">&#xe80d;</i> Login</button>
+    </form>
+<div class="box">
+            <div class="paket-voucher">
+			<h3 class="blink">::: Info CS 082318358907 :::</h3>
+			<i class="icon icon-qrcode">&#xe814;</i>
+            <strong>Paket Voucher</strong>
+            </div>
+            <div class="stats">
+              <div> <strong><i class="icon icon-ticket">&#xf145;</i> 12 Jam</strong> 2000</div>
+              <div> <strong><i class="icon icon-clock">&#xe80f;</i> AKTIF</strong> 12 Jam</div>
+              <div> <a class="btn btn-merah beli-voucher" href="https://wa.me/+6282318358907"><i class="icon icon-money">&#xf0d6;</i> Beli</a>
+              </div>
+            </div>
+            <div class="stats">
+              <div> <strong><i class="icon icon-ticket">&#xf145;</i> 24 Jam</strong> 3000</div>
+              <div> <strong><i class="icon icon-clock">&#xe80f;</i> AKTIF</strong> 1 Hari</div>
+              <div> <a class="btn btn-merah beli-voucher" href="https://wa.me/+6282318358907"><i class="icon icon-money">&#xf0d6;</i> Beli</a>
+              </div>
+            </div>
+            <div class="stats">
+              <div> <strong><i class="icon icon-ticket">&#xf145;</i> 1 Minggu</strong> 15000</div>
+              <div> <strong><i class="icon icon-clock">&#xe80f;</i> AKTIF</strong> 1 Minggu</div>
+              <div> <a class="btn btn-merah beli-voucher" href="https://wa.me/+6282318358907"><i class="icon icon-money">&#xf0d6;</i> Beli</a>
+              </div>
+            </div>
+            <div class="stats">
+              <div> <strong><i class="icon icon-ticket">&#xf145;</i> 1 Bulan</strong> 40000</div>
+              <div> <strong><i class="icon icon-clock">&#xe80f;</i> AKTIF</strong> 1 Bulan</div>
+              <div> <a class="btn btn-merah beli-voucher" href=" https://wa.me/+6282318358907"><i class="icon icon-money">&#xf0d6;</i> Beli</a>
+              </div>
+            </div>
+
+</div>
+</div>
+  <div class="bottombar">
+<!-- Credit Link - Tolong Jangan Hapus Bagian Ini -->
+<div class="hide">Copyright &copy; <script type="text/javascript">new Date().getFullYear()>2016&&document.write(new Date().getFullYear());</script> <a class="login" href="http://ringroad.net/" id="login" title="Ringroad Network"></a></div>
+<!-- End Credit Link -->
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+	var error = "$(error)";
+	var error1 = "user $(username) has reached uptime limit";
+	var error2 = "user $(username) has reached traffic limit";
+	var error3 = "no valid profile found";
+	var error4 = "invalid username or password";
+	var error5 = "user &lt;$(username)&gt; not found";
+	var error6 = "simultaneous session limit reached";
+	if (error == error1 || error == error2 || error == error3){
+		window.location.href = "expired.html";
+	} else if (error == error4){
+		document.getElementById("infoError").innerHTML = "Mohon Periksa Informasi Login Anda";
+	} else if (error == error5){
+		document.getElementById("infoError").innerHTML = "Member atau Voucher Tidak Ditemukan";
+	} else if (error == error6){
+		document.getElementById("infoError").innerHTML = "Jumlah Session Login Telah Dibatasi";											
+	} else {
+		document.getElementById("infoError").innerHTML = "$(error)";
+	}
+</script>
+$(if chap-id)
+<form name="sendin" action="$(link-login-only)" method="post">
+<input type="hidden" name="username" />
+<input type="hidden" name="password" />
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="false" />
+</form>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+function doLogin() {
+	document.sendin.username.value = document.login.username.value;
+	document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+	document.sendin.submit();
+	return false;
+}
+</script>
+$(endif)
+<script type="text/javascript">
+var host = window.location.hostname;
+document.title = "Login Hotspot - " + host, window.onload = voucher();
+function kodevoucher() {
+    var e = document.getElementById("username").value //.toLowerCase(); //.toUpperCase();
+    document.getElementById("username").value = e, document.getElementById("password").value = e
+}
+function voucher() {
+    document.getElementById("username").classList.remove("username"), document.getElementById("username").classList.add("userkv"), document.getElementById("username").focus(), document.getElementById("username").oninput = kodevoucher, document.getElementById("username").placeholder = "Kode Voucher", document.getElementById("password").type = "hidden", document.getElementById("Informasi").innerHTML = "Masukkan Kode Voucher"
+}
+function member() {
+    document.getElementById("username").classList.remove("userkv"), document.getElementById("username").classList.add("username"), document.getElementById("username").focus(), document.getElementById("username").oninput = "", document.getElementById("username").placeholder = "Username", document.getElementById("password").type = "password", document.getElementById("Informasi").innerHTML = "Masukkan Username dan Password"
+}
+
+</script>
+<script>
+// Set Show Hide Jadwal
+$('.Hide').click(function() {
+    $('.waktu-container, .id-container').show(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+$('.Show').click(function() {
+    $('.waktu-container, .id-container').hide(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+</script>
+</script>
+</body>
+</html>
